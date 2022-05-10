@@ -23,6 +23,6 @@ steps:
   displayName: Build an image
   inputs:
     containerRegistry: 'test connection'
-    repository: '$(imageName)'
+    repository: '010193'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
