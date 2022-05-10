@@ -23,6 +23,6 @@ steps:
   displayName: Build an image
   inputs:
     containerRegistry: 'test connection'
-    repository: '010193'
+    repository: '010193/javaangular'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
