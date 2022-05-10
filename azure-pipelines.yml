@@ -1,0 +1,27 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- development
+
+pool: 'ubuntu-latest'
+
+variables:
+  imageName: 'pipelines-java-docker'
+
+steps:
+- task: DockerInstaller@0
+  displayName: Docker Installer
+  inputs:
+    dockerVersion: 17.09.0-ce
+    releaseType: stable
+
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    containerRegistry: 'test connection'
+    repository: '$(imageName)'
+    command: 'buildAndPush'
+    Dockerfile: 'piwin/Dockerfile'
