@@ -25,4 +25,4 @@ steps:
     containerRegistry: 'test connection'
     repository: '$(imageName)'
     command: 'buildAndPush'
-    Dockerfile: 'piwin/Dockerfile'
+    Dockerfile: 'Dockerfile'
