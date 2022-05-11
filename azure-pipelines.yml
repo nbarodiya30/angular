@@ -13,16 +13,22 @@ variables:
   imageName: 'pipelines-java-docker'
 
 steps:
-- task: DockerInstaller@0
-  displayName: Docker Installer
-  inputs:
-    dockerVersion: 17.09.0-ce
-    releaseType: stable
+# #- task: DockerInstaller@0
+#  # displayName: Docker Installer
+#   #inputs:
+#     dockerVersion: 17.09.0-ce
+#     releaseType: stable
 
-- task: Docker@2
-  displayName: Build an image
+# - task: Docker@2
+#   displayName: Build an image
+#   inputs:
+#     containerRegistry: 'test connection'
+#     repository: '010193/javaangular'
+#     command: 'buildAndPush'
+#     Dockerfile: 'Dockerfile'
+- task: KubernetesManifest@0
   inputs:
-    containerRegistry: 'test connection'
-    repository: '010193/javaangular'
-    command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    action: 'deploy'
+    kubernetesServiceConnection: 'k8s'
+    namespace: 'test'
+    manifests: 'angular.yaml'
