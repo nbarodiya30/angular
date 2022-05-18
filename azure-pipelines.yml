@@ -33,6 +33,6 @@ steps:
  - task: KubernetesManifest@0
    inputs:
      action: 'deploy'
-     kubernetesServiceConnection: 'k8s'
+     kubernetesServiceConnection: 'rancher'
      namespace: 'test'
      manifests: 'angular.yaml'
