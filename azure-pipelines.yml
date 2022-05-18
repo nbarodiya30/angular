@@ -25,7 +25,8 @@ steps:
   inputs:
     containerRegistry: 'caasregistry'
     repository: 'PSESSLANT001.pcop.ericsson.se/javaangular'
-    command: 'push'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
 #  - task: KubernetesManifest@0
 #    inputs:
 #      action: 'deploy'
