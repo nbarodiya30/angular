@@ -6,8 +6,8 @@
 trigger:
 - azure-pipelines
 
-pool:
-  vmImage: ubuntu-latest
+pool: 'CICD_MANAGED_ECN_AGENTS'
+
 
 variables:
   imageName: 'pipelines-java-docker'
