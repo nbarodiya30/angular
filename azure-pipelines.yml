@@ -13,26 +13,22 @@ variables:
   imageName: 'pipelines-java-docker'
 
 steps:
-# - task: CmdLine@2
-#   inputs:
-#     script: 'ping 10.117.117.201'
-#- bash: ping mocha.rnd.gic.ericsson.se
-# #- task: DockerInstaller@0
-#  # displayName: Docker Installer
-#   #inputs:
-#     dockerVersion: 17.09.0-ce
-#     releaseType: stable
 
-# - task: Docker@2
-#   displayName: Build an image
-#   inputs:
-#     containerRegistry: 'test connection'
-#     repository: '010193/javaangular'
-#     command: 'buildAndPush'
-#     Dockerfile: 'Dockerfile'
- - task: KubernetesManifest@0
-   inputs:
-     action: 'deploy'
-     kubernetesServiceConnection: 'rancher'
-     namespace: 'test'
-     manifests: 'angular.yaml'
+- task: DockerInstaller@0
+  displayName: Docker Installer
+  inputs:
+    dockerVersion: 17.09.0-ce
+    releaseType: stable
+
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    containerRegistry: 'caasregistry'
+    repository: 'PSESSLANT001.pcop.ericsson.se/javaangular'
+    command: 'push'
+#  - task: KubernetesManifest@0
+#    inputs:
+#      action: 'deploy'
+#      kubernetesServiceConnection: 'rancher'
+#      namespace: 'test'
+#      manifests: 'angular.yaml'
