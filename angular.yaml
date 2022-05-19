@@ -15,7 +15,7 @@ spec:
       containers:
         - name: hello-world-app
           image: 010193/javaangular
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 ---
