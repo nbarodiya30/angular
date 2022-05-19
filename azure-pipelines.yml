@@ -31,6 +31,6 @@ steps:
 - task: KubernetesManifest@0
   inputs:
     action: 'deploy'
-    kubernetesServiceConnection: 'k8srancher'
-    namespace: 'test'
+    kubernetesServiceConnection: 'CaasK8'
+    namespace: 'piwin'
     manifests: 'angular.yaml'
