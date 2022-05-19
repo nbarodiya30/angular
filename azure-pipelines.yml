@@ -20,17 +20,17 @@ steps:
 #     dockerVersion: 17.09.0-ce
 #     releaseType: stable
 
-# - task: Docker@2
-#   displayName: Build an image
-#   inputs:
-#     containerRegistry: 'test connection'
-#     repository: '010193/javaangular'
-#     command: 'buildAndPush'
-#     Dockerfile: 'Dockerfile'
-
-- task: KubernetesManifest@0
+- task: Docker@2
+  displayName: Build an image
   inputs:
-    action: 'deploy'
-    kubernetesServiceConnection: 'CaasK8'
-    namespace: 'piwin'
-    manifests: 'angular.yaml'
+    containerRegistry: 'caasregistry'
+    repository: 'PSESSLANT001.pcop.ericsson.se/javaangular'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+
+# - task: KubernetesManifest@0
+#   inputs:
+#     action: 'deploy'
+#     kubernetesServiceConnection: 'CaasK8'
+#     namespace: 'piwin'
+#     manifests: 'angular.yaml'
