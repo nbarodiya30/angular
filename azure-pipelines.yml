@@ -24,7 +24,7 @@ steps:
   displayName: Build an image
   inputs:
     containerRegistry: 'caasregistry'
-    repository: 'PSESSLANT001.pcop.ericsson.se/javaangular'
+    repository: 'javaangular'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
 
