@@ -6,7 +6,7 @@
 trigger:
 - azure-pipelines
 
-pool: 'LocalMachine'
+pool: 'CICD_GB'
 
 
 variables:
@@ -25,8 +25,9 @@ steps:
   inputs:
     containerRegistry: 'caasregistry'
     repository: 'javaangular'
-    command: 'push'
-    tags: '458126'
+    command: 'buildAndPush'
+    Dockerfile: 'Dockerfile'
+    
 
 # - task: KubernetesManifest@0
 #   inputs:
