@@ -24,9 +24,9 @@ steps:
   displayName: Build an image
   inputs:
     containerRegistry: 'caasregistry'
-    repository: 'javaangular'
+    repository: 'PSESSLANT001.pcop.ericsson.se/javaangular'
     command: 'push'
-    tags: '458746'
+    
     
 
 # - task: KubernetesManifest@0
