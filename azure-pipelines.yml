@@ -25,8 +25,8 @@ steps:
   inputs:
     containerRegistry: 'caasregistry'
     repository: 'javaangular'
-    command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    command: 'push'
+    tags: '458126'
 
 # - task: KubernetesManifest@0
 #   inputs:
