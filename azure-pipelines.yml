@@ -14,17 +14,24 @@ variables:
 
 steps:
 
+- bash: |
+   docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
+   docker build -t PSESSLANT001.pcop.ericsson.se/javaangular:latest .
+   docker push PSESSLANT001.pcop.ericsson.se/javaangular:latest
+   
+  displayName: 'Bash Script'
+
 # - task: DockerInstaller@0
 #   displayName: Docker Installer
 #   inputs:
 #     dockerVersion: 17.09.0-ce
 #     releaseType: stable
 
-- task: Docker@2
-  displayName: Build an image
-  inputs:
-    containerRegistry: 'caasregistry'
-    command: 'login'
+# - task: Docker@2
+#   displayName: Build an image
+#   inputs:
+#     containerRegistry: 'caasregistry'
+#     command: 'login'
     
     
 
