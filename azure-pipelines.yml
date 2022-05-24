@@ -14,7 +14,7 @@ variables:
 
 steps:
 
-- bash: |
+- powershell: |
    docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
    docker build -t PSESSLANT001.pcop.ericsson.se/javaangular:latest .
    docker push PSESSLANT001.pcop.ericsson.se/javaangular:latest
