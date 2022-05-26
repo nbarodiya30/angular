@@ -19,7 +19,7 @@ steps:
 #    docker build -t PSESSLANT001.pcop.ericsson.se/javaangular:latest .
 #    docker push PSESSLANT001.pcop.ericsson.se/javaangular:latest
    
-  displayName: 'Bash Script'
+  # displayName: 'Bash Script'
 
 # - task: DockerInstaller@0
 #   displayName: Docker Installer
