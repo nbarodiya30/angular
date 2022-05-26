@@ -3,21 +3,13 @@ kind: Deployment
 metadata:
   name: angular1
   namespace: test
-  labels:
-    app: angular1
 spec:
   replicas: 3
-  selector:
-    matchLabels:
-      app: angular1
   template:
-    metadata:
-      labels:
-        app: angular1
     spec:
       containers:
         - name: angular1
-          image: '010193/angular:v164'
+          image: '010193/angular:v163'
           resources: {}
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
