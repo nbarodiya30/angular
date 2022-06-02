@@ -14,12 +14,12 @@ variables:
 
 steps:
 
-   displayName: 'Bash Script'
+      displayName: 'Bash Script'
   - bash: |
-     docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
-     docker images
+      docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
+      docker images
         
-   displayName: 'Docker Script'
+    displayName: 'Docker Script'
 
 # - bash: |
 #    docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
