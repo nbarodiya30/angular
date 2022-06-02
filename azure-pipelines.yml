@@ -13,18 +13,11 @@ variables:
   imageName: 'pipelines-java-docker'
 
 steps:
-
-      displayName: 'Bash Script'
-  - bash: |
-      docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
-      docker images
-        
-    displayName: 'Docker Script'
-
-# - bash: |
-#    docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
-#    docker build -t PSESSLANT001.pcop.ericsson.se/javaangular:latest .
-#    docker push PSESSLANT001.pcop.ericsson.se/javaangular:latest
+ - bash: |
+    docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
+    docker images
+    # docker build -t PSESSLANT001.pcop.ericsson.se/javaangular:latest .
+    # docker push PSESSLANT001.pcop.ericsson.se/javaangular:latest
    
   # displayName: 'Bash Script'
 
