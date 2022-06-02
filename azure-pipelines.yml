@@ -14,6 +14,13 @@ variables:
 
 steps:
 
+   displayName: 'Bash Script'
+ - bash: |
+     docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
+     docker images
+        
+   displayName: 'Docker Script'
+
 # - bash: |
 #    docker login -u admin -p admin@1234 PSESSLANT001.pcop.ericsson.se
 #    docker build -t PSESSLANT001.pcop.ericsson.se/javaangular:latest .
@@ -35,9 +42,9 @@ steps:
     
     
 
-- task: KubernetesManifest@0
-  inputs:
-    action: 'deploy'
-    kubernetesServiceConnection: 'k8srancher'
-    namespace: 'test'
-    manifests: 'angular1.yaml'
+# - task: KubernetesManifest@0
+#   inputs:
+#     action: 'deploy'
+#     kubernetesServiceConnection: 'k8srancher'
+#     namespace: 'test'
+#     manifests: 'angular1.yaml'
